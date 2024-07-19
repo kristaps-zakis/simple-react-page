@@ -13,13 +13,20 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+        run: pnpm install
+        # uses: bahmutov/npm-install@v1
+        # uses: bahmutov/pnpm-install@v1
 
       - name: Test project
         run: npm test
