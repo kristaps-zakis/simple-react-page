@@ -1,4 +1,5 @@
 import { getByTestId, render } from '@testing-library/react';
+import App from '../src/App';
 import '@testing-library/jest-dom';
 
 describe('Testing the main app page', () => {
